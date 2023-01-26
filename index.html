@@ -5,38 +5,144 @@
   <title> 4차 산업혁명과 융합교육 수업 </title>
   <meta charset="utf-8">
 </head>
+
+<header> <h1>4차 산업혁명과 융합교육 <br> 정보 교과 피지컬컴퓨팅 내용 학습하기(일부) </h1> </header>
+
 <body>
-
-<header>
-  <h1>4차 산업혁명과 융합교육<br>
-  정보 교과 피지컬컴퓨팅 내용 학습하기(일부)
-  </h1>
-</header>
-
 <section>
   <nav role="navigation" id="top_Menu">
-    <ul>
-      <li><a href = "index.html" class="menu_Link" target="_self">🏠홈으로 돌아가기</a></li>
-      <li><a href = "page2.html" class="menu_Link" target="show_contents">🤓피지컬 컴퓨팅?</a></li>
-      <li><a href = "page3.html" class="menu_Link" target="show_contents">🔎구성요소 찾아보기</a></li>
-      <li><a href = "page4.html" class="menu_Link" target="show_contents">🤔피지컬 장치 구상하기</a></li>
+    <ul id="navLiMenu">
+      
     </ul>
   </nav>
 
+  <script>
+    var menuList = ['🏠홈으로 돌아가기','🤓피지컬 컴퓨팅?','🔎구성요소 찾아보기','🤔돌아보기'];
+    var menuUrl = ['index.html', 'page2.html','page3.html', 'page4.html'];
+    var menuTarget = ['_self', 'show_contents','show_contents','show_contents'];
+
+    for (var i = 0; i < menuList.length; i++)
+    {
+      var menuItem = document.createElement('li');
+      menuItem.setAttribute("class", "menu_Link");
+      var menuItemAtag = document.createElement('a');
+      menuItemAtag.href = menuUrl[i];
+      menuItemAtag.target = menuTarget[i];
+      menuItemAtag.text = menuList[i];
+
+      menuItem.appendChild(menuItemAtag);
+      document.getElementById('navLiMenu').appendChild(menuItem);
+    }
+
+    
+    /*
+      var textNode = document.createTextNode(menuList[i]);
+      textNode.
+      document.getElementById('navLiMenu').appendChild(textNode);
+
+      // document.getElementById('navLiMenu').innerHTML='<li><a href =' + menuUrl + 'class=menu_Link' + 'target=' + menuTarget +'>' + menuList[i] + '</a></li>';
+      //<li><a href =' + menuUrl + 'class=menu_Link' + 'target=' + menuTarget +'>' + menuList[i] + '</a></li>';
+    }
+    */
+    </script>
+
 
   <article>
-
     <h1 >본 사이트는 충북대학교 AI융합교육전공 '4차 산업혁명과 융합교육'과목에서 테스트 할 용도로 만들어진 페이지 입니다.</h1>
+
     <p> 사이트 이용 방법은 다음과 같습니다.
       맨 위에 있는 <u style="color:red"> 메뉴</u>버튼을 눌러 원하는 동작을 선택해주세요. 
       <br>해당 메뉴를 선택한다면 아래 Frame에 해당 정보가 표시됩니다.
     </p>
 
+
   <iframe id="fr01" name="show_contents" height=100%; style="border-radius: 1em;">
   </iframe>
 
   </article>
+
+  <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://web1-spdiiucguh.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </section>
+
+
+x입력 
+<input type="text" id="xx" > <br>
+y입력
+<input type="text" id="yy" > <br>
+
+<input type="button" id = "chkAnsBtn1" value="눌러보기" onclick="aaa()">
+<input type="button" id = "chkAnsBtn2" value="덧셈" onclick="bbb()">
+<input type="button" id = "chkAnsBtn3" value="곱셈" onclick="ccc()">
+
+<p id='demo1'>
+이럼 안돼
+</p>
+<label>문2. 다음 중 디지털 구동기 종류가 아닌 것은? </label><br>
+    <form>
+      <input type="radio" id="서보모터" value="서보모터">
+      <label for="서보모터"> 서보모터 </label><br>
+
+      <input type="radio" id="초음파 센서(HC-02)" value="초음파 센서(HC-02)">
+      <label for="초음파 센서(HC-02)"> 초음파 센서(HC-02) </label><br>
+
+      <input type="radio" id="라즈베리파이" value="라즈베리파이">
+      <label for="라즈베리파이"> 라즈베리파이 </label><br>
+
+      <input type="radio" id="CDS" value="CDS">
+      <label for="CDS"> CDS </label><br>
+    </form>
+
+
+<script>
+  function aaa()
+  {
+    alert('aaa');
+    var x = document.getElementById("xx").value;
+    var y = document.getElementById("yy").value;
+    var z = x + y;
+    alert('bbb');
+    document.querySelector('#demo1').innerHTML(z);
+    alert('ccc');
+  }
+
+  function bbb()
+  {
+    var y = 2;
+    var x = 3;
+    z = x + y;
+    document.getElementById('demo1').innerHTML('aa');
+    document.querySelector('#demo1').innerHTML(z);
+  }
+
+  function ccc()
+  {
+    var y = 2;
+    var x = 3;
+    z = x + y;
+    document.getElementById('demo1').write(z);
+  }
+</script>
+
+
+
 
 <footer>
   이 사이트는 충북대학교 '4차 산업혁명과 융합교육' 과제물과 관련하여 작성된 페이지 입니다. 
@@ -46,4 +152,5 @@
 
 </body>
 </html>
+
 
